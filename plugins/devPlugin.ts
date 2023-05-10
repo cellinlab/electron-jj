@@ -33,3 +33,28 @@ export const devPlugin = () => {
     },
   };
 };
+
+export const getReplacer = () => {
+  const externalModules = ["os", "fs", "path", "events", "child_process", "crypto", "http", "buffer", "url", "electron", "better-sqlite3", "knex"];
+
+  const result = {};
+  for (const module of externalModules) {
+    result[module] = () => {
+      return {
+        find: new RegExp(`^${module}$`),
+        code: `const ${module} = require("${module}");export {${module} as default}`,
+      };
+    };
+  }
+
+  result["electron"] = () => {
+    const electronModules = ["clipboard", "ipcRenderer", "nativeImage", "shell", "webFrame"];
+    const electronResult = {
+      find: new RegExp(`^electron$`),
+      code: `const {${electronModules.join(',')}} = require("electron");export {${electronModules.join(',')}}`,
+    };
+    return electronResult;
+  };
+
+  return result;
+};
