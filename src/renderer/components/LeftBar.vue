@@ -13,7 +13,7 @@
           ]"></i>
       </router-link>
     </div>
-    <div class="setting">
+    <div class="setting" @click="openSettingWindow">
       <div class="menu-item">
         <i class="iconfont icon-setting"></i>
       </div>
@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { createDialog } from '../common/Dialog'
 
 const homeRoutes = ref([
   {
@@ -58,6 +59,26 @@ watch(
     deep: true,
   }
 )
+
+const openSettingWindow = async () => {
+  const config = {
+    modal: true,
+    width: 800,
+    webPreferences: {
+      webViewTag: false,
+    },
+  }
+  const dialog = await createDialog('/setting/account', config)
+  const msg = {
+    msgName: 'FromOpenSetting',
+    value: "Hello, I'm from open setting window!",
+  }
+  dialog.postMessage(msg)
+}
+
+window.addEventListener('message', (event) => {
+  console.log('LeftBar receive message: ', event)
+})
 </script>
 
 <style scoped lang="scss">

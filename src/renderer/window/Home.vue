@@ -6,7 +6,14 @@
 </template>
 
 <script setup lang="ts">
+import { ipcRenderer } from 'electron'
+import { onMounted } from 'vue'
+
 import LeftBar from '../components/LeftBar.vue'
+
+onMounted(() => {
+  ipcRenderer.send('showWindow')
+})
 </script>
 
 <style scoped lang="scss">

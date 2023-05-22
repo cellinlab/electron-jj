@@ -1,6 +1,6 @@
 <template>
   <div>
-    account
+    account setting
   </div>
 </template>
 
