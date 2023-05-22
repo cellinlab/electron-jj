@@ -7,6 +7,14 @@ import App from './App.vue'
 
 import { router } from './router'
 
+import { db } from '../common/db'
+
+db("Chat")
+  .first()
+  .then((res) => {
+    console.log(res)
+  })
+
 createApp(App)
   .use(createPinia())
   .use(router)
