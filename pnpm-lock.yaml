@@ -5,6 +5,7 @@ specifiers:
   cz-conventional-changelog: ^3.3.0
   electron: ^19.0.8
   electron-builder: 23.1.0
+  pinia: 2.0.17
   sass: 1.54.0
   typescript: ^5.0.2
   vite: ^4.3.2
@@ -18,6 +19,7 @@ devDependencies:
   cz-conventional-changelog: 3.3.0
   electron: 19.1.9
   electron-builder: 23.1.0
+  pinia: 2.0.17_dtjfskxukdxv24psui2m5c75zy
   sass: 1.54.0
   typescript: 5.0.4
   vite: 4.3.5_sass@1.54.0
@@ -2725,6 +2727,24 @@ packages:
     dev: true
     optional: true
 
+  /pinia/2.0.17_dtjfskxukdxv24psui2m5c75zy:
+    resolution: {integrity: sha512-AtwLwEWQgIjofjgeFT+nxbnK5lT2QwQjaHNEDqpsi2AiCwf/NY78uWTeHUyEhiiJy8+sBmw0ujgQMoQbWiZDfA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      typescript: 5.0.4
+      vue: 3.2.47
+      vue-demi: 0.14.5_vue@3.2.47
+    dev: true
+
   /plist/3.0.6:
     resolution: {integrity: sha512-WiIVYyrp8TD4w8yCvyeIr+lkmrGRd5u0VbRnU+tP/aRLxP/YadJUYOMZJ/6hIa3oUyVCsycXvtNRgd5XBJIbiA==}
     engines: {node: '>=6'}
@@ -3381,6 +3401,21 @@ packages:
       sass: 1.54.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /vue-demi/0.14.5_vue@3.2.47:
+    resolution: {integrity: sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.47
     dev: true
 
   /vue-router/4.1.6_vue@3.2.47:
